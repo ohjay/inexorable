@@ -10,7 +10,7 @@ I revisit the 3D world of my ["generative visual" project](https://github.com/oh
 
 ## Project Report
 
-You can find my project report [here](report/report.pdf).
+You can find my project report [here](https://owenjow.xyz/inexorable/report.pdf).
 
 ## Project Components
 
@@ -43,7 +43,7 @@ You can find my project report [here](report/report.pdf).
 
 ### [4] Scene layout design
 
-- I train a generator as part of a convolutional VAE (CVAE) to create top-down layout sampling maps. These maps are grayscale and [0, 1]-normalized such that the value at each location represents the probability that we place an object there. Accordingly, I use these maps in order to sample where to place each object.
+- I train a generator as part of a convolutional VAE (CVAE) to create top-down layout sampling maps. These maps are grayscale and [0, 1]-normalized such that the value at each location represents the probability that I place an object there (considering the top-down view of the room at the same resolution as the layout).
 - The CVAE is trained on [satellite imagery](http://www.escience.cn/people/JunweiHan/NWPU-RESISC45.html). Alternatively, it could be trained on any grayscale image data. For example, if it were trained on MNIST, then the scenes would build up like extruded 3D numbers.
 - The network is not trained for high-fidelity reconstruction. I do not regard this as important since (a) the maps are just used for sampling and (b) the use case is primarily artistic, not reconstructive. It's the thought that counts. :)
 
@@ -52,7 +52,7 @@ You can find my project report [here](report/report.pdf).
 - I allow users to add objects to the 3D scene in front of the current camera.
 - I also allow users to delete objects, but this functionality is essentially and intentionally ineffectual, since the rate of growth is faster than the maximum rate of deletion.
 - Users can orbit or walk around the scene as it grows.
-- I drop the objects from the sky as if they're coming from "the creator." An object will fall until it approximately hits the ground, and in this way the scene is slowly built up. This process can create amalgamations of objects, which might contribute to a sense of ML "creativity" (e.g. sofa + sofa = ?).
+- I drop the objects from the sky as if they're coming from the "creator." An object will fall until it approximately hits the ground, and in this way the scene is slowly built up. This process can create amalgamations of objects, which might contribute to a sense of ML creativity (e.g. sofa + sofa = ?).
 
 ### [6] Offline scene construction
 
